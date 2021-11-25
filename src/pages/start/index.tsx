@@ -4,7 +4,9 @@ import Button from '../../components/Button';
 
 function start() {
   return (
+    <>
     <Button/>
+    </>
   );
 }
 
