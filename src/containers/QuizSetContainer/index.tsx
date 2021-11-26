@@ -9,6 +9,9 @@ import { setQuizList } from '../../store/quizSet';
 function QuizSetContainer() {
   const dispatch = useDispatch();
   const { data, isLoading, isError } = useQuizData();
+  const handleNextButtonClick = () => {
+    console.log("다음문제클릭");
+  }
 
   useEffect(() => {
     data && dispatch(setQuizList(data.results));
@@ -17,7 +20,7 @@ function QuizSetContainer() {
   return (
     <QuizContainer>
       <QuizItem />
-      <Button />
+      <Button title="다음 문제" buttonClick={handleNextButtonClick} />
     </QuizContainer>
   );
 }

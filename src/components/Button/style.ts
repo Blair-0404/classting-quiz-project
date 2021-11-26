@@ -3,3 +3,5 @@ import styled from 'styled-components';
 export const ButtonContainer = styled.button`
   background-color: pink;
 `;
+export const Title = styled.span`
+`;

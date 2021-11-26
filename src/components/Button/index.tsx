@@ -1,10 +1,11 @@
 import React from 'react';
-import {ButtonContainer} from './style'
+import {ButtonContainer, Title} from './style'
+import { ButtonProps } from './types';
 
-function Button() {
+function Button({ title, buttonClick }: ButtonProps) {
   return (
-    <ButtonContainer>
-      공통버튼입니다.
+    <ButtonContainer onClick={buttonClick}>
+      <Title>{title}</Title>
     </ButtonContainer>
   );
 }
