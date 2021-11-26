@@ -20,7 +20,7 @@ export const counterSlice = createSlice({
   name: 'quizSet',
   initialState,
   reducers: {
-    setQuizList: (state, action: PayloadAction<string>) => {
+    setQuizList: (state, action: PayloadAction<quizSetState>) => {
       if (action.payload) Object.assign(state, action.payload);
     },
   }

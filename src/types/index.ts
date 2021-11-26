@@ -1,10 +1,9 @@
-export interface Question {
+import { QuizItemProps } from '../components/QuizItem/types';
+
+export interface Question extends QuizItemProps{
   category:string;
   type: string;
   difficulty: string;
-  question: string;
-  correct_answer: string;
-  incorrect_answers: string[];
 }
 //
 // export interface Problems {
