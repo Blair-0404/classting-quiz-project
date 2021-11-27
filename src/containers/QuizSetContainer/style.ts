@@ -5,6 +5,8 @@ export const QuizContainer = styled.div`
 
 export const QuizItemContainer = styled.div`
 `;
+export const Loading = styled.span`
+`;
 export const QuizNumber = styled.div`
   color: blue;
   margin-bottom: 5px;
@@ -24,7 +26,7 @@ export const ExampleWrapper = styled.div`
   margin-bottom: 10px;
 
 `;
-export const Example = styled.button<{ isSelect:boolean }>`
+export const Example = styled.button<{ isSelect: boolean }>`
   display: block;
   border: none;
   margin-bottom: 5px;
@@ -38,8 +40,7 @@ export const Example = styled.button<{ isSelect:boolean }>`
   &:disabled {
     color: gray;
     cursor: auto;
-     ${({ isSelect }) => isSelect ? `color:black;  font-weight: 600;` : `color:gray;`}
-
+    ${({ isSelect }) => isSelect ? `color:black;  font-weight: 600;` : `color:gray;`}
     &:hover {
       color: gray;
       font-weight: 400;
