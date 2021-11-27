@@ -12,7 +12,3 @@ export interface QuestionType extends QuizItemProps{
   type: string;
   difficulty: string;
 }
-//
-// export interface Problems {
-//   problems: Question[];
-// }

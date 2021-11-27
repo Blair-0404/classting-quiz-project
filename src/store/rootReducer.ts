@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import quizSetList from './quizSet/index';
+import result from './quizResult/index';
 
 const rootReducer = combineReducers({
-  quizSetList
+  result
 });
 
 export default rootReducer;
