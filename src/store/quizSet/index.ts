@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {  Question } from '../../types';
+import {  QuestionType } from '../../types';
 
 interface quizSetState {
-  quizSetList: Question[]
+  quizSetList: QuestionType[]
 }
 
 const initialState: quizSetState = {
