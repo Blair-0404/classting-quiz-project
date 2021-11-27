@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const QuizItemContainer = styled.div`
+  border: 1px solid red;
 `;
 export const QuizNumber = styled.div`
   color: blue;
@@ -12,9 +13,15 @@ export const Question = styled.span`
   margin-bottom: 10px;
 `;
 export const ExampleWrapper = styled.div`
-  max-height: 150px;
+  min-height: 100px;
+  margin-bottom: 10px;
+
 `;
-export const Example = styled.span`
+export const Example = styled.div`
   margin-bottom: 5px;
 `;
+export const ResultModal = styled.div`
+  background-color: red;
+`;
+
 
