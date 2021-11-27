@@ -5,8 +5,12 @@ const GlobalStyles = createGlobalStyle`
     ${reset}
     *{
         box-sizing:border-box;
+
     }
     body{
+        border: 2px solid gray;
+        border-radius: 5px;
+        margin: 100px;
         padding: 20px;
         font-size:16px;
         background-color:#ffffff;

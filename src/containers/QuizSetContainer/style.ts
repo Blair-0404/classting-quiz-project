@@ -20,7 +20,7 @@ export const QuestionTitle = styled.span`
 
 `;
 export const ExampleWrapper = styled.div`
-  min-height: 100px;
+  min-height: 90px;
   margin-bottom: 10px;
 
 `;
