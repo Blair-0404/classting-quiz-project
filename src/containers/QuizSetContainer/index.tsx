@@ -3,9 +3,9 @@ import { QuizContainer } from './style';
 import Button from '../../components/Button';
 import useQuizData from '../../hooks/useQuizData';
 import { QuestionType } from '../../types';
-import { Example, ExampleWrapper, QuizItemContainer, QuizNumber, ResultMessage, QuestionTitle } from './style';
+import { Example, ExampleWrapper, QuizItemContainer, QuizNumber, ResultMessage, QuestionTitle, Loading } from './style';
 import { useDispatch } from 'react-redux';
-import { incrementAnswerCount, incrementWrongAnswerCount } from '../../store/quizResult';
+import { incrementAnswerCount, incrementWrongAnswerCount, resetQuizResult } from '../../store/quizResult';
 
 
 export interface quizResultListType {
@@ -43,6 +43,7 @@ function QuizSetContainer() {
   
   useEffect(() => {
     data && setQuizList(data.results);
+    disPatch(resetQuizResult());
   }, [data]);
   
   useEffect(() => {
@@ -51,7 +52,7 @@ function QuizSetContainer() {
   
   return (
     <QuizContainer>
-      {isLoading ? <div>로딩중 입니다.</div> :
+      {isLoading ? <Loading>퀴즈를 불러오고 있습니다.</Loading> :
         <QuizItemContainer>
           <QuizNumber>Question{currentQuizNum + 1} )</QuizNumber>
           <QuestionTitle>{quizList[currentQuizNum]?.question}</QuestionTitle>
