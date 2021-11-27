@@ -2,7 +2,7 @@ import { fetcher } from '../api/index';
 import useSWR from 'swr';
 
 function useQuizData () {
-  const { data, error } = useSWR('https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple', fetcher)
+  const { data, error } = useSWR('https://opentdb.com/api.php?amount=4&category=21&difficulty=easy&type=multiple', fetcher)
   
   return {
     data: data,

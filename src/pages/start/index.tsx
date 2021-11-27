@@ -7,7 +7,7 @@ function start() {
 
   return (
     <Link to='/quiz'>
-    <Button title="퀴즈 시작"/>
+    <Button title="퀴즈 시작" isClickable={true} />
     </Link>
   );
 }
