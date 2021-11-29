@@ -6,7 +6,6 @@ export const QuizStartContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: #e2f5f8;
-
 `;
 
 export const Title = styled.h1`

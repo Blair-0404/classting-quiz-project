@@ -4,8 +4,14 @@ import Button from '../../components/Button';
 import useQuizData from '../../hooks/useQuizData';
 import { QuestionType } from '../../types';
 import { Example, ExampleWrapper, QuizItemContainer, QuizNumber, ResultMessage, QuestionTitle, Loading } from './style';
-import { useDispatch } from 'react-redux';
-import { incrementAnswerCount, incrementWrongAnswerCount, resetQuizResult } from '../../store/quizResult';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  incrementAnswerCount,
+  incrementWrongAnswerCount,
+  resetQuizResult,
+  updateEndTime
+} from '../../store/quizResult';
+import { getQuizResult } from '../../store/quizResult/selectors';
 
 
 export interface quizResultListType {
@@ -14,7 +20,7 @@ export interface quizResultListType {
 }
 
 function QuizSetContainer() {
-  const disPatch = useDispatch();
+  const dispatch = useDispatch();
   const { data, isLoading, isError } = useQuizData();
   
   const [currentQuizNum, setCurrentQuizNum] = useState<number>(0);
@@ -29,10 +35,13 @@ function QuizSetContainer() {
   };
   
   const handleNextButtonClick = () => {
+    if(currentQuizNum + 1 === 4)  {
+    dispatch(updateEndTime(new Date()))
+    }
     if (answer === selectAnswer) {
-      disPatch(incrementAnswerCount());
+      dispatch(incrementAnswerCount());
     } else {
-      disPatch(incrementWrongAnswerCount());
+      dispatch(incrementWrongAnswerCount());
     }
     if (currentQuizNum < quizList.length - 1) {
       setCurrentQuizNum(currentQuizNum + 1);
@@ -43,13 +52,13 @@ function QuizSetContainer() {
   
   useEffect(() => {
     data && setQuizList(data.results);
-    disPatch(resetQuizResult());
+    dispatch(resetQuizResult());
   }, [data]);
   
   useEffect(() => {
     setAnswer(quizList[currentQuizNum]?.correct_answer);
   });
-  
+
   return (
     <QuizContainer>
       {isLoading ? <Loading>퀴즈를 불러오고 있습니다.</Loading> :
